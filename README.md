@@ -1,8 +1,8 @@
-#SWAGGER
+# SWAGGER
 
 La librarie Swagger est utilisation pour une écriture automatique de la documentation des apis. 
 
-Il suffit de se rendre au endpot '/swagger' pour y accéder. 
+Il suffit de se rendre au endpoint '/swagger' pour y accéder. 
 
 Si swagger est manquant la commande d'installation est la suivante:
 
