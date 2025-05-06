@@ -1,12 +1,6 @@
 namespace UsersApis; 
 
- public record User 
- {
-    public int Id  { get;  set; }
-    public required  string Username { get; set; }
-    public required string Email { get;  set; }
-    public required  string PasswordHash { get;  set; }
- }
+
 
  public class UsersApi
  {
@@ -40,10 +34,12 @@ namespace UsersApis;
        if (user.Id == update.Id)
        {
          user.Username = update.Username;
+         user.Email = update.Email;
+         user.PasswordHash = update.PasswordHash;
        }
        return user;
      }).ToList();
-     return update;
+    return _users.FirstOrDefault(u => u.Id == update.Id);
    }
 
    public static void RemoveUser(int removeid)
