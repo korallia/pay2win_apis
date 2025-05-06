@@ -22,26 +22,32 @@ namespace UsersApis;
       return dbContext.Users.FirstOrDefault(user => user.Id == id); // Récupère l'utilisateur avec cet ID
    } 
 
-   public static User CreateUser(User user) 
-   {
-     _users.Add(user);
-     return user;
-   }
+   public static void CreateUser(AppDbContext dbContext, User newUser)
+{
+    dbContext.Users.Add(newUser);
+    dbContext.SaveChanges();
+    Console.WriteLine($"Utilisateur {newUser.Username} créé avec succès.");
+}
 
-   public static User UpdateUser(User update) 
-   {
-     _users = _users.Select(user =>
-     {
-       if (user.Id == update.Id)
-       {
-         user.Username = update.Username;
-         user.Email = update.Email;
-         user.Password = update.Password;
-       }
-       return user;
-     }).ToList();
-    return _users.FirstOrDefault(u => u.Id == update.Id);
-   }
+
+   public static void UpdateUser(AppDbContext dbContext, User updatedUser)
+{
+    var existingUser = dbContext.Users.FirstOrDefault(u => u.Id == updatedUser.Id);
+
+    if (existingUser == null)
+    {
+        Console.WriteLine($"Utilisateur avec ID {updatedUser.Id} non trouvé.");
+        return;
+    }
+
+    existingUser.Username = updatedUser.Username;
+    existingUser.Email = updatedUser.Email;
+    existingUser.Password = updatedUser.Password;
+
+    dbContext.SaveChanges();
+    Console.WriteLine($"Utilisateur avec ID {updatedUser.Id} mis à jour avec succès.");
+}
+
 
     public static void RemoveUser(AppDbContext dbContext, int id)
 {

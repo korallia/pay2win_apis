@@ -52,8 +52,27 @@ app.MapGet("/getUsers", (AppDbContext dbContext) =>
     return Results.Ok(users);  // Retourne les utilisateurs
 });
 
-app.MapPost("/createUser", (User user) => UsersApi.CreateUser(user));
-app.MapPut("/updateUser", (User user) => UsersApi.UpdateUser(user));
+app.MapPost("/createUser", (AppDbContext dbContext, User newUser) =>
+{
+    UsersApi.CreateUser(dbContext, newUser);
+    return Results.Ok(new { message = $"Utilisateur {newUser.Username} créé avec succès." });
+});
+
+
+app.MapPut("/updateUser", (AppDbContext dbContext, User updatedUser) =>
+{
+    var existingUser = dbContext.Users.FirstOrDefault(u => u.Id == updatedUser.Id);
+    if (existingUser == null)
+    {
+        return Results.NotFound(new { message = $"Utilisateur avec ID {updatedUser.Id} non trouvé." });
+    }
+
+    UsersApi.UpdateUser(dbContext, updatedUser);
+    return Results.Ok(new { message = $"Utilisateur avec ID {updatedUser.Id} mis à jour avec succès." });
+});
+
+
+
 app.MapDelete("/deleteUser/{removeId}", (AppDbContext dbContext, int removeId) =>
 {
     Console.WriteLine($"Tentative de suppression de l'utilisateur {removeId}");
