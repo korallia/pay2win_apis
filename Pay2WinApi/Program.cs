@@ -1,4 +1,5 @@
 using Microsoft.OpenApi.Models;
+using UsersApis;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -20,5 +21,10 @@ if (app.Environment.IsDevelopment())
    });
 }
 app.MapGet("/", () => "Hello World!");
+app.MapGet("/getUser/{id}", (int id) => UsersApi.GetUser(id));
+app.MapGet("/getUsers", () => UsersApi.GetUsers());
+app.MapPost("/createUser", (User user) => UsersApi.CreateUser(user));
+app.MapPut("/updateUser", (User user) => UsersApi.UpdateUser(user));
+app.MapDelete("/remove/{id}", (int id) => UsersApi.RemoveUser(id));
 
 app.Run();

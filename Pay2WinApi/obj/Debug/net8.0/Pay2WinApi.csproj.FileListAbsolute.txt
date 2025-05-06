@@ -33,3 +33,4 @@ C:\pay2win_apis\Pay2WinApi\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\pay2win_apis\Pay2WinApi\obj\Debug\net8.0\Pay2WinApi.csproj.AssemblyReference.cache
 C:\pay2win_apis\Pay2WinApi\obj\Debug\net8.0\Pay2WinApi.MvcApplicationPartsAssemblyInfo.cs
 C:\pay2win_apis\Pay2WinApi\obj\Debug\net8.0\Pay2WinApi.csproj.Up2Date
+C:\pay2win_apis\Pay2WinApi\obj\Debug\net8.0\Pay2WinApi.sourcelink.json
