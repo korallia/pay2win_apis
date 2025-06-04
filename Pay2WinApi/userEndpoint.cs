@@ -17,19 +17,25 @@ public static class UserEndpoints
             return user is null ? Results.NotFound() : Results.Ok(user);
         });
 
-        app.MapPost("/createUser", (UserService service, User newUser) =>
+        app.MapPost("/createUser", (UserService service, UserModel model) =>
         {
+            var newUser = model.ToUser();
             var createdUser = service.CreateUser(newUser);
-            return Results.Ok(createdUser);
+            return Results.Ok(UserViewModel.FromUser(createdUser));
         });
 
-        app.MapPut("/updateUser", (UserService service, User updatedUser) =>
-        {
-            var user = service.UpdateUser(updatedUser);
-            return user is null
-                ? Results.NotFound(new { message = $"Utilisateur ID {updatedUser.Id} non trouvé." })
-                : Results.Ok(user);
-        });
+        app.MapPut("/updateUser", (UserService service, UserModel model) =>
+{
+            var user = service.GetUser(model.Id);
+            if (user is null)
+                return Results.NotFound();
+
+            model.ApplyToUser(user);
+            service.UpdateUser(user);
+
+            return Results.Ok(UserViewModel.FromUser(user));
+});
+
 
         app.MapDelete("/deleteUser/{id}", (UserService service, int id) =>
         {

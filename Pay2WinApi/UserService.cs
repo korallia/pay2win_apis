@@ -18,7 +18,7 @@ public class UserService
         return _dbContext.Users.ToList();
     }
 
-    public User? GetUser(int id)
+    public User? GetUser(long id)
     {
         return _dbContext.Users.FirstOrDefault(u => u.Id == id);
     }
