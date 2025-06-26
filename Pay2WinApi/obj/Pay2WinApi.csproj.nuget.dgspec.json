@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\pay2win_apis\\Pay2WinApi\\Pay2WinApi.csproj": {}
+    "C:\\Users\\kenny\\Documents\\GitHub\\pay2win_apis\\Pay2WinApi\\Pay2WinApi.csproj": {}
   },
   "projects": {
-    "C:\\pay2win_apis\\Pay2WinApi\\Pay2WinApi.csproj": {
+    "C:\\Users\\kenny\\Documents\\GitHub\\pay2win_apis\\Pay2WinApi\\Pay2WinApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\pay2win_apis\\Pay2WinApi\\Pay2WinApi.csproj",
+        "projectUniqueName": "C:\\Users\\kenny\\Documents\\GitHub\\pay2win_apis\\Pay2WinApi\\Pay2WinApi.csproj",
         "projectName": "Pay2WinApi",
-        "projectPath": "C:\\pay2win_apis\\Pay2WinApi\\Pay2WinApi.csproj",
-        "packagesPath": "C:\\Users\\koral\\.nuget\\packages\\",
-        "outputPath": "C:\\pay2win_apis\\Pay2WinApi\\obj\\",
+        "projectPath": "C:\\Users\\kenny\\Documents\\GitHub\\pay2win_apis\\Pay2WinApi\\Pay2WinApi.csproj",
+        "packagesPath": "C:\\Users\\kenny\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\kenny\\Documents\\GitHub\\pay2win_apis\\Pay2WinApi\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\koral\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\kenny\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,7 +22,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -44,8 +39,7 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.200"
+        }
       },
       "frameworks": {
         "net8.0": {
@@ -67,7 +61,7 @@
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
-              "version": "[6.1.4, )"
+              "version": "[9.0.1, )"
             }
           },
           "imports": [
@@ -89,7 +83,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
