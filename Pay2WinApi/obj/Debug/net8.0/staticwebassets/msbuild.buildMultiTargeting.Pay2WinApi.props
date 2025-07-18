@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\build\Pay2WinApi.props" />
-</Project>
