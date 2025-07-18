@@ -1,0 +1,17 @@
+# Dossiers de build
+**/bin/
+**/obj/
+
+# Fichiers de build temporaires
+*.dll
+*.exe
+*.pdb
+*.cache
+*.json
+*.AssemblyInfo.cs
+
+# Fichiers liés à Visual Studio / .NET
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
