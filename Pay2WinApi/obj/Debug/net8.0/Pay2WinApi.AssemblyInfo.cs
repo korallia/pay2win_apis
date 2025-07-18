@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Pay2WinApi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+daae5503affa9deb70739db6a194ccea2558118c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1379d12a33dad6ab5f44d36b31b3447657a31824")]
 [assembly: System.Reflection.AssemblyProductAttribute("Pay2WinApi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Pay2WinApi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

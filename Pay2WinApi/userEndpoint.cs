@@ -17,6 +17,21 @@ public static class UserEndpoints
             return user is null ? Results.NotFound() : Results.Ok(user);
         });
 
+        app.MapPost("/login", (UserService service, LoginModel model) =>
+        {
+            var user = service.GetUserByUsername(model.Username);
+            if (user == null)
+                return Results.Unauthorized();
+
+            bool valid = user.VerifyPassword(model.Password);
+
+            if (!valid)
+                return Results.Unauthorized();
+
+            return Results.Ok(UserViewModel.FromUser(user));
+        });
+
+
         app.MapPost("/createUser", (UserService service, UserModel model) =>
         {
             var newUser = model.ToUser();
@@ -25,7 +40,7 @@ public static class UserEndpoints
         });
 
         app.MapPut("/updateUser", (UserService service, UserModel model) =>
-{
+        {
             var user = service.GetUser(model.Id);
             if (user is null)
                 return Results.NotFound();
@@ -34,7 +49,7 @@ public static class UserEndpoints
             service.UpdateUser(user);
 
             return Results.Ok(UserViewModel.FromUser(user));
-});
+        });
 
 
         app.MapDelete("/deleteUser/{id}", (UserService service, int id) =>
@@ -44,5 +59,7 @@ public static class UserEndpoints
                 ? Results.Ok(new { message = $"Utilisateur ID {id} supprimé." })
                 : Results.NotFound(new { message = $"Utilisateur ID {id} non trouvé." });
         });
+        
+        
     }
 }
