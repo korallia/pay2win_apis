@@ -30,13 +30,13 @@ public class User
     }
 
     public void PrepareForCreate()
-{
-    if (string.IsNullOrWhiteSpace(Password))
-        throw new ArgumentException("Le mot de passe est requis à la création.");
+    {
+        if (string.IsNullOrWhiteSpace(Password))
+            throw new ArgumentException("Le mot de passe est requis à la création.");
 
-    SetPassword(Password);
-    Password = null;
-}
+        SetPassword(Password);
+        Password = null;
+    }
 
 
     private static class PasswordHasher

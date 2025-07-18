@@ -30,6 +30,12 @@ public class UserService
         return newUser;
     }
 
+    public User? GetUserByUsername(string username)
+{
+    return _dbContext.Users.FirstOrDefault(u => u.Username == username);
+}
+
+
     public User? UpdateUser(User updatedUser)
     {
         var existingUser = _dbContext.Users.FirstOrDefault(u => u.Id == updatedUser.Id);
